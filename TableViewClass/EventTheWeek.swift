@@ -13,14 +13,20 @@ class EventTheWeek: UITableViewController {
 //    var  arrayOfString2 = ["adnjadna", "sdfsff"]
 //    
 //    var myArray: [String] = []
-    var DayInWeek = ["MonDay","TueDay","WednesDay","ThursDay","FriDay","SaturDay","SunDay"]
-    var num1 = 3 , num2 = 4
     
-
+    
+    var daysInWeek = ["MonDay","TueDay","WednesDay","ThursDay","FriDay","SaturDay","SunDay"]
+    var sectionDetail = [
+    
+            [],
+            [],
+            []
+    
+    ]
+    var num1 = 3 , num2 = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +43,7 @@ class EventTheWeek: UITableViewController {
 // trả về số section của tableView
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return DayInWeek.count
+        return daysInWeek.count
     }
 // trả về số cột có được trong 1 section của table View
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,41 +76,40 @@ class EventTheWeek: UITableViewController {
 //Hiện dữ liệu lên Table View
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-//        if(DayInWeek[indexPath.section] == "0"){
-            cell.titleEvent?.text = "ABC"
-            cell.DetailEvent?.text = "DPF"
+        if(indexPath.section == 0){
+            cell.titleEvent?.text = "Thanh 0"
+            cell.DetailEvent?.text = "Khoa 0"
 
-//        }
-//        if(DayInWeek[indexPath.section] == "1"){
-//            cell.titleEvent?.text = "ABC"
-//            cell.DetailEvent?.text = "DPF"
-//            
-//        }
-//        if(DayInWeek[indexPath.section] == "2"){
-//            cell.titleEvent?.text = "ABC"
-//            cell.DetailEvent?.text = "DPF"
-//            
-//        }
-//        if(DayInWeek[indexPath.section] == "3"){
-//            cell.titleEvent?.text = "ABC"
-//            cell.DetailEvent?.text = "DPF"
-//            
-//        }
-//        if(DayInWeek[indexPath.section] == "4"){
-//            cell.titleEvent?.text = "ABC"
-//            cell.DetailEvent?.text = "DPF"
-//            
-//        }
-//        if(DayInWeek[indexPath.section] == "5"){
-//            cell.titleEvent?.text = "ABC"
-//            cell.DetailEvent?.text = "DPF"
-//            
-//        }
-//        if(DayInWeek[indexPath.section] == "6"){
-//            cell.titleEvent?.text = "ABC"
-//            cell.DetailEvent?.text = "DPF"
-//            
-//        }
+        }
+        if(indexPath.section == 1){
+            cell.titleEvent?.text = "Thanh 1"
+            cell.DetailEvent?.text = "Khoa 1"
+            
+        }
+        if(indexPath.section == 2){
+            cell.titleEvent?.text = "Thanh 2"
+            cell.DetailEvent?.text = "Khoa 2"
+            
+        }
+        if(indexPath.section == 3){
+            cell.titleEvent?.text = "Thanh 3"
+            cell.DetailEvent?.text = "Khoa 3"
+            
+        }
+        if(indexPath.section == 4){
+            cell.titleEvent?.text = "Thanh 4"
+            cell.DetailEvent?.text = "Khoa 4"
+        }
+        if(indexPath.section == 5){
+            cell.titleEvent?.text = "Thanh 5"
+            cell.DetailEvent?.text = "Khoa 5"
+            
+        }
+        if(indexPath.section == 6){
+            cell.titleEvent?.text = "Thanh 6"
+            cell.DetailEvent?.text = "Khoa 6"
+            
+        }
                 // Configure the cell...
 
         return cell
@@ -124,7 +129,7 @@ class EventTheWeek: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            DayInWeek.remove(at: indexPath.row)
+            daysInWeek.remove(at: indexPath.row)
             self.tableView.reloadData()
             // Delete the row from the data source
             //tableView.deleteRows(at: [indexPath], with: .fade)
@@ -133,9 +138,48 @@ class EventTheWeek: UITableViewController {
         }    
     }
     
+
+    
     // set title for Header
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return DayInWeek[section]
+        return daysInWeek[section]
+    }
+    
+    var temp = ""
+    var temp1 = ""
+    var temp2 = ""
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        temp2 = daysInWeek[indexPath.section]
+        if let cell = tableView.cellForRow(at: indexPath) as? TableViewCell {
+            temp = cell.titleEvent.text!
+            temp1 = cell.DetailEvent.text!
+            //print(temp)
+//            let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//            destinationVC.even1 = temp
+//            destinationVC.even2 = "AVG"
+//            self.navigationController?.pushViewController(destinationVC, animated: true)
+            performSegue(withIdentifier: "a", sender: self)
+        }
+    }
+//    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "cell" {
+//            var secondViewController : ViewController = segue.destination as! ViewController
+//            var indexPath = self.tableView(<#T##tableView: UITableView##UITableView#>, canPerformAction: <#T##Selector#>, forRowAt: <#T##IndexPath#>, withSender: <#T##Any?#>).indexPathForSelectedRow()
+//            
+//            var indexPath = self.tableview.indexPathForSelectedRow() //get index of data for selected row
+//            
+//            secondViewController.data = self.dataArray.objectAtIndex(indexPath.row) // get data by index and pass it to second view controller
+//        
+//        }
+//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        
+        let destinationVC = segue.destination as! ViewController
+        destinationVC.even1 = temp
+        destinationVC.even2 = "AVG"
     }
     /*
     // Override to support rearranging the table view.
