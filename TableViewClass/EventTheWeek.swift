@@ -179,7 +179,8 @@ class EventTheWeek: UITableViewController {
         
         let destinationVC = segue.destination as! ViewController
         destinationVC.even1 = temp
-        destinationVC.even2 = "AVG"
+        destinationVC.even2 = temp1
+        destinationVC.title1 = temp2
     }
     /*
     // Override to support rearranging the table view.
