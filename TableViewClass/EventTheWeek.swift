@@ -16,11 +16,29 @@ class EventTheWeek: UITableViewController {
     
     
     var daysInWeek = ["MonDay","TueDay","WednesDay","ThursDay","FriDay","SaturDay","SunDay"]
+    var title1 = [
+        
+        ["title1","title2","title3","title4"],
+        ["title5","title6","title7","title8"],
+        ["title9","title10","title11","title12"],
+        ["title13","title14","title15","title16"],
+        ["title17","title18","title19","title20"],
+        ["title21","title22","title23","title24"],
+        ["title25","title26","title27","title28"],
+        ["title29","title30","title31","title32"],
+        
+        ]
+
     var sectionDetail = [
     
-            [],
-            [],
-            []
+            ["event1","event2","event3","event4"],
+            ["event5","event6","event7","event9"],
+            ["event10","event11","event12","event13"],
+            ["event14","event15","event16","event17"],
+            ["event18","event19","event20","event21"],
+            ["event22","event23","event24","event25"],
+            ["event26","event27","event28","event29"],
+            ["event30","event31","event32","event33"],
     
     ]
     var num1 = 3 , num2 = 4
@@ -77,37 +95,34 @@ class EventTheWeek: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         if(indexPath.section == 0){
-            cell.titleEvent?.text = "Thanh 0"
-            cell.DetailEvent?.text = "Khoa 0"
+            cell.titleEvent?.text = title1[indexPath.section][indexPath.row]
+            cell.DetailEvent?.text = sectionDetail[indexPath.section][indexPath.row]
 
         }
         if(indexPath.section == 1){
-            cell.titleEvent?.text = "Thanh 1"
-            cell.DetailEvent?.text = "Khoa 1"
-            
+            cell.titleEvent?.text = title1[indexPath.section][indexPath.row]
+            cell.DetailEvent?.text = sectionDetail[indexPath.section][indexPath.row]
         }
         if(indexPath.section == 2){
-            cell.titleEvent?.text = "Thanh 2"
-            cell.DetailEvent?.text = "Khoa 2"
+            cell.titleEvent?.text = title1[indexPath.section][indexPath.row]
+            cell.DetailEvent?.text = sectionDetail[indexPath.section][indexPath.row]
             
         }
         if(indexPath.section == 3){
-            cell.titleEvent?.text = "Thanh 3"
-            cell.DetailEvent?.text = "Khoa 3"
+            cell.titleEvent?.text = title1[indexPath.section][indexPath.row]
+            cell.DetailEvent?.text = sectionDetail[indexPath.section][indexPath.row]
             
         }
         if(indexPath.section == 4){
-            cell.titleEvent?.text = "Thanh 4"
-            cell.DetailEvent?.text = "Khoa 4"
-        }
+            cell.titleEvent?.text = title1[indexPath.section][indexPath.row]
+            cell.DetailEvent?.text = sectionDetail[indexPath.section][indexPath.row]        }
         if(indexPath.section == 5){
-            cell.titleEvent?.text = "Thanh 5"
-            cell.DetailEvent?.text = "Khoa 5"
-            
+            cell.titleEvent?.text = title1[indexPath.section][indexPath.row]
+            cell.DetailEvent?.text = sectionDetail[indexPath.section][indexPath.row]
         }
         if(indexPath.section == 6){
-            cell.titleEvent?.text = "Thanh 6"
-            cell.DetailEvent?.text = "Khoa 6"
+            cell.titleEvent?.text = title1[indexPath.section][indexPath.row]
+            cell.DetailEvent?.text = sectionDetail[indexPath.section][indexPath.row]
             
         }
                 // Configure the cell...
@@ -129,8 +144,47 @@ class EventTheWeek: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            daysInWeek.remove(at: indexPath.row)
-            self.tableView.reloadData()
+            if (indexPath.section==0)
+            {
+                sectionDetail[indexPath.section].remove(at: indexPath.row)
+                title1[indexPath.section].remove(at: indexPath.row)
+            }
+            if (indexPath.section==1)
+            {
+                sectionDetail[indexPath.section].remove(at: indexPath.row)
+                title1[indexPath.section].remove(at: indexPath.row)
+
+            }
+            if (indexPath.section==2)
+            {
+                sectionDetail[indexPath.section].remove(at: indexPath.row)
+                title1[indexPath.section].remove(at: indexPath.row)
+
+            }
+            if (indexPath.section==3)
+            {
+                sectionDetail[indexPath.section].remove(at: indexPath.row)
+                title1[indexPath.section].remove(at: indexPath.row)
+
+            }
+            if (indexPath.section==4)
+            {
+                sectionDetail[indexPath.section].remove(at: indexPath.row)
+                title1[indexPath.section].remove(at: indexPath.row)
+
+            }
+            if (indexPath.section==5)
+            {
+                sectionDetail[indexPath.section].remove(at: indexPath.row)
+                title1[indexPath.section].remove(at: indexPath.row)
+
+            }
+            if (indexPath.section==6)
+            {
+                sectionDetail[indexPath.section].remove(at: indexPath.row)
+                title1[indexPath.section].remove(at: indexPath.row)
+
+            }
             // Delete the row from the data source
             //tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
