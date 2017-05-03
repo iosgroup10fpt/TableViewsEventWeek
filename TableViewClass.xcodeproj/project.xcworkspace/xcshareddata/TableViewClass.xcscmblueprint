@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B2DA8760A3953EC0266A79A5AFFB299D81828CE9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B2DA8760A3953EC0266A79A5AFFB299D81828CE9" : 9223372036854775807,
+    "F3281EE3CDF8F6959353E94C7ED2DB331F4D7F14" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "150913F6-AD19-4BD0-9619-B6226D3AB1F5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B2DA8760A3953EC0266A79A5AFFB299D81828CE9" : "TableViewsEventWeek\/",
+    "F3281EE3CDF8F6959353E94C7ED2DB331F4D7F14" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TableViewClass",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TableViewClass.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iosgroup10fpt\/TableViewsEventWeek.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B2DA8760A3953EC0266A79A5AFFB299D81828CE9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iosgroup10fpt\/Animation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F3281EE3CDF8F6959353E94C7ED2DB331F4D7F14"
+    }
+  ]
+}
