@@ -14,11 +14,23 @@ class EventTheWeek: UITableViewController {
 //    
 //    var myArray: [String] = []
     
+    @IBAction func ActionSort(_ sender: Any) {
+        title1[0] = title1[0].sorted(by: { $0 > $1 } )
+        title1[1] = title1[1].sorted(by: { $0 > $1 } )
+        title1[2] = title1[2].sorted(by: { $0 > $1 } )
+        title1[3] = title1[3].sorted(by: { $0 > $1 } )
+        title1[4] = title1[4].sorted(by: { $0 > $1 } )
+        title1[5] = title1[5].sorted(by: { $0 > $1 } )
+        title1[6] = title1[6].sorted(by: { $0 > $1 } )
+        title1[7] = title1[7].sorted(by: { $0 > $1 } )
+        NSLog("Up")
+        NSLog("\(title1[0])")
+    }
     
     var daysInWeek = ["MonDay","TueDay","WednesDay","ThursDay","FriDay","SaturDay","SunDay"]
     var title1 = [
         
-        ["title1","title2","title3","title4"],
+        ["title","title2","title3","title4"],
         ["title5","title6","title7","title8"],
         ["title9","title10","title11","title12"],
         ["title13","title14","title15","title16"],
@@ -49,7 +61,8 @@ class EventTheWeek: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.rightBarButtonItem = editButtonItem
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -144,49 +157,57 @@ class EventTheWeek: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if (indexPath.section==0)
-            {
-                sectionDetail[indexPath.section].remove(at: indexPath.row)
-                title1[indexPath.section].remove(at: indexPath.row)
-            }
-            if (indexPath.section==1)
-            {
-                sectionDetail[indexPath.section].remove(at: indexPath.row)
-                title1[indexPath.section].remove(at: indexPath.row)
-
-            }
-            if (indexPath.section==2)
-            {
-                sectionDetail[indexPath.section].remove(at: indexPath.row)
-                title1[indexPath.section].remove(at: indexPath.row)
-
-            }
-            if (indexPath.section==3)
-            {
-                sectionDetail[indexPath.section].remove(at: indexPath.row)
-                title1[indexPath.section].remove(at: indexPath.row)
-
-            }
-            if (indexPath.section==4)
-            {
-                sectionDetail[indexPath.section].remove(at: indexPath.row)
-                title1[indexPath.section].remove(at: indexPath.row)
-
-            }
-            if (indexPath.section==5)
-            {
-                sectionDetail[indexPath.section].remove(at: indexPath.row)
-                title1[indexPath.section].remove(at: indexPath.row)
-
-            }
-            if (indexPath.section==6)
-            {
-                sectionDetail[indexPath.section].remove(at: indexPath.row)
-                title1[indexPath.section].remove(at: indexPath.row)
-
-            }
+//            if (indexPath.section==0)
+//            {
+//                NSLog("\(indexPath.row)")
+//               sectionDetail[0].remove(at: indexPath.row)
+//                title1[0].remove(at: indexPath.row)
+//            }
+//            if (indexPath.section==1)
+//            {
+//                sectionDetail[indexPath.section].remove(at: indexPath.row)
+//                title1[indexPath.section].remove(at: indexPath.row)
+//
+//            }
+//            if (indexPath.section==2)
+//            {
+//                sectionDetail[indexPath.section].remove(at: indexPath.row)
+//                title1[indexPath.section].remove(at: indexPath.row)
+//
+//            }
+//            if (indexPath.section==3)
+//            {
+//                sectionDetail[indexPath.section].remove(at: indexPath.row)
+//                title1[indexPath.section].remove(at: indexPath.row)
+//
+//            }
+//            if (indexPath.section==4)
+//            {
+//                sectionDetail[indexPath.section].remove(at: indexPath.row)
+//                title1[indexPath.section].remove(at: indexPath.row)
+//
+//            }
+//            if (indexPath.section==5)
+//            {
+//                sectionDetail[indexPath.section].remove(at: indexPath.row)
+//                title1[indexPath.section].remove(at: indexPath.row)
+//
+//            }
+//            if (indexPath.section==6)
+//            {
+//                sectionDetail[indexPath.section].remove(at: indexPath.row)
+//                title1[indexPath.section].remove(at: indexPath.row)
+//
+//            }
+           // tableView.deleteRows(at: [indexPath], with: .fade)
             // Delete the row from the data source
-            //tableView.deleteRows(at: [indexPath], with: .fade)
+//            let eventLine = eventLines[indexPath.section]
+//            eventLine.events.remove(at: indexPath.row)
+            NSLog("\(indexPath.section)")
+            NSLog("\(indexPath.row)")
+            daysInWeek.remove(at: indexPath.row)
+            //title1[indexPath.section].remove(at: indexPath.row)
+           // tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
